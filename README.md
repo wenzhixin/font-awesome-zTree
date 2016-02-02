@@ -4,10 +4,10 @@
 
 ## Demos
 
-* [Full demos]()
-* [完整例子]()
-* [jsFiddle: Standard Data]()
-* [jsFiddle: Simple Data]()
+* [Full demos](http://wenzhixin.github.io/font-awesome-zTree/assets/zTree_v3/demo/en/)
+* [完整例子](http://wenzhixin.github.io/font-awesome-zTree/assets/zTree_v3/demo/cn/)
+* [jsFiddle: Standard Data](https://jsfiddle.net/wenyi/rx9nv1ts/)
+* [jsFiddle: Simple Data](https://jsfiddle.net/wenyi/rx9nv1ts/1/)
 
 ## API Document
 
@@ -148,7 +148,7 @@ var zNodes =[
 ];
 
 $(document).ready(function(){
-    $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+    $.fn.zTree.init($("#tree"), setting, zNodes);
 });
 ```
 
