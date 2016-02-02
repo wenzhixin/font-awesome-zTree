@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="dist/zTreeStyle.css">
+    <link rel="stylesheet" href="dist/font-awesome-zTree.css">
+</head>
+<body>
+<ul id="treeDemo" class="ztree"></ul>
+<script src="assets/jquery.min.js"></script>
+<script src="dist/jquery.ztree.all-3.5.min.js"></script>
+<script>
+    var setting = {};
+
+    var zNodes = [
+        {
+            name: "pNode 01", open: true,
+            children: [
+                {
+                    name: "pNode 11",
+                    children: [
+                        {name: "leaf node 111"},
+                        {name: "leaf node 112"},
+                        {name: "leaf node 113"},
+                        {name: "leaf node 114"}
+                    ]
+                },
+                {
+                    name: "pNode 12",
+                    children: [
+                        {name: "leaf node 121"},
+                        {name: "leaf node 122"},
+                        {name: "leaf node 123"},
+                        {name: "leaf node 124"}
+                    ]
+                },
+                {name: "pNode 13 - no child", isParent: true}
+            ]
+        },
+        {
+            name: "pNode 02",
+            children: [
+                {
+                    name: "pNode 21", open: true,
+                    children: [
+                        {name: "leaf node 211"},
+                        {name: "leaf node 212"},
+                        {name: "leaf node 213"},
+                        {name: "leaf node 214"}
+                    ]
+                },
+                {
+                    name: "pNode 22",
+                    children: [
+                        {name: "leaf node 221"},
+                        {name: "leaf node 222"},
+                        {name: "leaf node 223"},
+                        {name: "leaf node 224"}
+                    ]
+                },
+                {
+                    name: "pNode 23",
+                    children: [
+                        {name: "leaf node 231"},
+                        {name: "leaf node 232"},
+                        {name: "leaf node 233"},
+                        {name: "leaf node 234"}
+                    ]
+                }
+            ]
+        },
+        {name: "pNode 3 - no child", isParent: true}
+    ];
+
+    $(document).ready(function () {
+        $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+    });
+</script>
+</body>
+</html>
