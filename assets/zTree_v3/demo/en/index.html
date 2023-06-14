@@ -4,6 +4,8 @@
   <TITLE> ZTREE DEMO </TITLE>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <link rel="stylesheet" href="../../css/zTreeStyle/zTreeStyle.css" type="text/css">
+  <link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="../../../../dist/font-awesome-zTree.css">
   <style>
     body {
       background-color: white;
@@ -25,7 +27,7 @@
       margin-left: 10px;
     }
   </style>
-  <script type="text/javascript" src="../../js/jquery-1.4.4.min.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/jquery@3.7.0/dist/jquery.min.js"></script>
   <script type="text/javascript" src="../../js/jquery.ztree.core.js"></script>
   <SCRIPT type="text/javascript">
     <!--
@@ -54,6 +56,7 @@
             return false;
           } else {
             demoIframe.attr("src", treeNode.file + ".html");
+            loadGG();
             return true;
           }
         }
@@ -131,6 +134,12 @@
       {id: 603, pId: 6, name: "hide with radio mode", file: "exhide/radio"}
     ];
 
+    function loadGG () {
+      $('#gg').data('load', false);
+      $('#g').remove();
+      $('head').append('<script id="g" src="https://gg.wenzhixin.net.cn/bootstrap-table/gg.js"></script>');
+    }
+
     $(document).ready(function () {
       var t = $("#tree");
       t = $.fn.zTree.init(t, setting, zNodes);
@@ -138,10 +147,15 @@
       demoIframe.bind("load", loadReady);
       var zTree = $.fn.zTree.getZTreeObj("tree");
       zTree.selectNode(zTree.getNodeByParam("id", 101));
-
+      loadGG();
     });
 
     function loadReady() {
+      demoIframe.contents().find("body").append([
+        '<link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">',
+        '<link rel="stylesheet" href="../../../../../dist/font-awesome-zTree.css" type="text/css">'
+      ].join(''));
+
       var bodyH = demoIframe.contents().find("body").get(0).scrollHeight,
         htmlH = demoIframe.contents().find("html").get(0).scrollHeight,
         maxH = Math.max(bodyH, htmlH), minH = Math.min(bodyH, htmlH),
@@ -163,6 +177,10 @@
     <TD width=770px align=left valign=top>
       <IFRAME ID="testIframe" Name="testIframe" FRAMEBORDER=0 SCROLLING=AUTO width=100% height=600px
               SRC="core/standardData.html"></IFRAME>
+    </TD>
+
+    <TD style="vertical-align: top;">
+      <div id="gg"></div>
     </TD>
   </TR>
 </TABLE>
