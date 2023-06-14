@@ -6,8 +6,8 @@
 
 * [Full demos](http://wenzhixin.github.io/font-awesome-zTree/assets/zTree_v3/demo/en/)
 * [完整例子](http://wenzhixin.github.io/font-awesome-zTree/assets/zTree_v3/demo/cn/)
-* [jsFiddle: Standard Data](https://jsfiddle.net/wenyi/rx9nv1ts/)
-* [jsFiddle: Simple Data](https://jsfiddle.net/wenyi/rx9nv1ts/1/)
+* [Standard Data](https://live.bootstrap-table.com/code/wenzhixin/15653)
+* [Simple Data](https://live.bootstrap-table.com/code/wenzhixin/15654)
 
 ## API Document
 
