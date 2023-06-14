@@ -4,11 +4,11 @@
     <TITLE> ZTREE DEMO - awesome 风格</TITLE>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <!-- Include font-awesome here, CDN is ok, or locally installed by bower to your project -->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    
+    <link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">
+
     <link rel="stylesheet" href="../../../css/demo.css" type="text/css">
     <link rel="stylesheet" href="../../../css/awesomeStyle/awesome.css" type="text/css">
-    <script type="text/javascript" src="../../../js/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/jquery@3.7.0/dist/jquery.min.js"></script>
     <script type="text/javascript" src="../../../js/jquery.ztree.core-3.5.js"></script>
     <script type="text/javascript" src="../../../js/jquery.ztree.excheck-3.5.js"></script>
     <script type="text/javascript" src="../../../js/jquery.ztree.exedit-3.5.js"></script>
@@ -73,7 +73,7 @@
 		}
         $(document).ready(function(){
             $.fn.zTree.init($("#treeDemo"), setting, zNodes);
-			setCheck();			
+			setCheck();
 			$("#r1").bind("change", setCheck);
 			$("#r2").bind("change", setCheck);
 			$("#disablechk").bind("change", setCheck);
@@ -111,11 +111,11 @@
         <ul class="info">
             <li class="title"><h2>实现方法说明</h2>
                 <ul class="list">
-                    <li>你需要在页面中引入 fontawesome 样式 （http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css）</li>
+                    <li>你需要在页面中引入 fontawesome 样式 （https://unpkg.com/@fortawesome/fontawesome-free@5.15.4/css/all.min.css）</li>
                     <li> <i class="fa fa-car"></i> &lt;= 小汽车图标 (如果 fontawesome 样式被正常加载，你可以正常看到)</li>
                     <li class="highlight_red">引入 适配 zTree 的 样式文件: 'css/awesomeStyle'</li>
                     <li>感谢 mikkelking 提供这个 Demo. （仅供参考）</li>
-                    
+
                     <li><p>Mode: <br/>
                             <label ><input type="radio" id="r1" class="radio first" name="r" value="checkbox" checked />
                                 Checkbox</label>
@@ -130,6 +130,6 @@
         </ul>
     </div>
 </div>
- 
+
 </BODY>
 </HTML>

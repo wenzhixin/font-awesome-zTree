@@ -4,7 +4,7 @@
   <TITLE> ZTREE DEMO </TITLE>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <link rel="stylesheet" href="../../css/zTreeStyle/zTreeStyle.css" type="text/css">
-  <link rel="stylesheet" href="../../../font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">
   <link rel="stylesheet" href="../../../../dist/font-awesome-zTree.css">
   <style>
 	body {
@@ -13,19 +13,25 @@
 	text-align: center;
 	}
 	div, p, table, th, td {
-		list-style:none; 
-		margin:0; padding:0; 
-		color:#333; font-size:12px; 
+		list-style:none;
+		margin:0; padding:0;
+		color:#333; font-size:12px;
 		font-family:dotum, Verdana, Arial, Helvetica, AppleGothic, sans-serif;
 	}
 	#testIframe {margin-left: 10px;}
   </style>
-<script type="text/javascript" src="../../js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/jquery@3.7.0/dist/jquery.min.js"></script>
 <script type="text/javascript" src="../../js/jquery.ztree.core-3.5.js"></script>
   <SCRIPT type="text/javascript" >
   <!--
 	var zTree;
 	var demoIframe;
+
+	function loadGG () {
+		$('#gg').data('load', false);
+		$('#g').remove();
+		$('head').append('<script id="g" src="https://gg.wenzhixin.net.cn/bootstrap-table/gg.js"></script>');
+	}
 
 	var setting = {
 		view: {
@@ -49,6 +55,7 @@
 					return false;
 				} else {
 					demoIframe.attr("src",treeNode.file + ".html");
+					loadGG();
 					return true;
 				}
 			}
@@ -131,20 +138,20 @@
 		demoIframe.bind("load", loadReady);
 		var zTree = $.fn.zTree.getZTreeObj("tree");
 		zTree.selectNode(zTree.getNodeByParam("id", 101));
-	
+		loadGG();
 	});
 
 	function loadReady() {
+		demoIframe.contents().find("body").append([
+				'<link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">',
+				'<link rel="stylesheet" href="../../../../../dist/font-awesome-zTree.css" type="text/css">'
+		].join(''));
 		var bodyH = demoIframe.contents().find("body").get(0).scrollHeight,
 		htmlH = demoIframe.contents().find("html").get(0).scrollHeight,
 		maxH = Math.max(bodyH, htmlH), minH = Math.min(bodyH, htmlH),
 		h = demoIframe.height() >= maxH ? minH:maxH ;
 		if (h < 530) h = 530;
 		demoIframe.height(h);
-        demoIframe.contents().find("body").append([
-            '<link rel="stylesheet" href="../../../../font-awesome/css/font-awesome.min.css">',
-            '<link rel="stylesheet" href="../../../../../dist/font-awesome-zTree.css" type="text/css">'
-        ].join(''));
 	}
 
   //-->
@@ -158,6 +165,9 @@
 			<ul id="tree" class="ztree" style="width:260px; overflow:auto;"></ul>
 		</TD>
 		<TD width=770px align=left valign=top><IFRAME ID="testIframe" Name="testIframe" FRAMEBORDER=0 SCROLLING=AUTO width=100%  height=600px SRC="core/standardData.html"></IFRAME></TD>
+		<TD style="vertical-align: top;">
+			<div id="gg"></div>
+		</TD>
 	</TR>
 </TABLE>
 

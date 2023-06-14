@@ -18,7 +18,7 @@
 Include Font Awesome library (if your project doesn't use it already), `zTreeStyle.css` and `font-awesome-zTree.css` in the head tag your html document.
 
 ```html
-<link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">
 <link rel="stylesheet" href="dist/zTreeStyle.css">
 <link rel="stylesheet" href="dist/font-awesome-zTree.css">
 ```
@@ -26,7 +26,7 @@ Include Font Awesome library (if your project doesn't use it already), `zTreeSty
 Include jQuery library (if your project doesn't use it already) and zTree library in the head tag or at the very bottom of your document, just before the closing body tag (usually recommended for better performance).
 
 ```html
-<script src="assets/jquery.min.js"></script>
+<script src="https://unpkg.com/jquery@3.7.0/dist/jquery.min.js"></script>
 <script src="dist/jquery.ztree.all-3.5.min.js"></script>
 ```
 Create a tree element with id:
