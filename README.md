@@ -19,7 +19,7 @@ Include Font Awesome library (if your project doesn't use it already), `zTreeSty
 
 ```html
 <link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">
-<link rel="stylesheet" href="dist/zTreeStyle.css">
+<link rel="stylesheet" href="zTree_v3/css/zTreeStyle/zTreeStyle.css"">
 <link rel="stylesheet" href="dist/font-awesome-zTree.css">
 ```
 
@@ -27,7 +27,7 @@ Include jQuery library (if your project doesn't use it already) and zTree librar
 
 ```html
 <script src="https://unpkg.com/jquery@3.7.0/dist/jquery.min.js"></script>
-<script src="dist/jquery.ztree.all-3.5.min.js"></script>
+<script src="zTree_v3/js/jquery.ztree.all.min.js"></script>
 ```
 Create a tree element with id:
 
