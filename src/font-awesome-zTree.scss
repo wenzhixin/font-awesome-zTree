@@ -1,0 +1,294 @@
+/**
+ * @author zhixin wen <wenzhixin2010@gmail.com>
+ * version: 1.2.0
+ * https://github.com/wenzhixin/font-awesome-zTree
+ */
+
+.ztree {
+  * {
+    font-size: 14px;
+    font-family: inherit;
+  }
+
+  .fa, .fab, .fad, .fal, .far, .fas {
+    font-family: "Font Awesome 5 Free";
+  }
+
+  .ztree-search {
+    margin: 5px;
+
+    input {
+      padding: 5px 10px;
+    }
+
+    .search-clear {
+      padding: 5px 10px;
+      font-size: 12px;
+      line-height: 1;
+    }
+  }
+
+  li {
+    ul {
+      position: relative;
+      background: none;
+      margin-left: 12px;
+      padding-left: 0;
+
+      &.line {
+        background: none;
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        width: 0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        border-left: 1px dotted #ccc;
+      }
+    }
+
+    li {
+      position: relative;
+      padding-left: 9px;
+      line-height: inherit;
+
+      &::before {
+        content: "";
+        display: block;
+        width: 10px;
+        height: 0;
+        border-top: 1px dotted #ccc;
+        position: absolute;
+        top: 13px;
+        left: 0;
+      }
+    }
+
+    .noline_open + a + ul {
+      li::before {
+        border-top: none;
+      }
+
+      &::before {
+        border-left: none;
+      }
+    }
+
+    span {
+      &.node_name {
+        margin-right: 6px;
+      }
+
+      &.button {
+        &[class$="Page"] {
+          width: 15px;
+        }
+
+        &::before {
+          display: block;
+          line-height: 26px;
+          text-align: center;
+        }
+
+        &.roots_docu,
+        &.center_docu,
+        &.bottom_docu {
+          position: relative;
+          height: 26px;
+          padding: 0;
+        }
+
+        &.roots_docu::before,
+        &.center_docu::before,
+        &.bottom_docu::before {
+          content: "";
+          display: block;
+          width: 18px;
+          height: 0;
+          border-top: 1px dotted #ccc;
+          position: absolute;
+          top: 13px;
+          left: 0;
+        }
+
+        &.root_open::before,
+        &.roots_open::before,
+        &.center_open::before,
+        &.bottom_open::before,
+        &.noline_open::before {
+          content: "\f146";
+          color: #3c8dbc;
+        }
+
+        &.root_close::before,
+        &.roots_close::before,
+        &.center_close::before,
+        &.bottom_close::before,
+        &.noline_close::before {
+          content: "\f0fe";
+          color: #3c8dbc;
+        }
+
+        &.chk {
+          color: #6b6b6b;
+
+          &[class$="focus"]::before {
+            font-weight: bold;
+          }
+
+          &[class$="disable"] {
+            color: #ccc;
+          }
+
+          &.checkbox_true_full::before,
+          &.checkbox_true_disable::before,
+          &.checkbox_true_full_focus::before {
+            content: "\f14a";
+            font-weight: normal !important;
+          }
+
+          &.checkbox_false_full::before,
+          &.checkbox_false_disable::before,
+          &.checkbox_false_full_focus::before {
+            content: "\f0c8";
+            font-weight: normal !important;
+          }
+
+          &.checkbox_true_part::before,
+          &.checkbox_true_part_focus::before,
+          &.checkbox_false_part::before,
+          &.checkbox_false_part_focus::before {
+            content: "\f146";
+            font-weight: bold !important;
+          }
+
+          &.radio_true_full::before,
+          &.radio_true_disable::before,
+          &.radio_true_full_focus::before {
+            content: "\f058";
+            font-weight: normal !important;
+          }
+
+          &.radio_false_full::before,
+          &.radio_false_disable::before,
+          &.radio_false_full_focus::before {
+            content: "\f111";
+            font-weight: normal !important;
+          }
+
+          &.radio_true_part::before,
+          &.radio_true_part_focus::before,
+          &.radio_false_part::before,
+          &.radio_false_part_focus::before {
+            content: "\f192";
+            font-weight: normal !important;
+          }
+        }
+
+        &.ico_open::before {
+          content: "\f07c";
+        }
+
+        &.ico_close::before {
+          content: "\f07b";
+        }
+
+        &.ico_docu::before {
+          content: "\f15b";
+        }
+
+        &.add::before {
+          content: "\f067";
+        }
+
+        &.edit::before {
+          content: "\f044";
+        }
+
+        &.remove::before {
+          content: "\f2ed";
+        }
+
+        &.fa_history_ico_open::before,
+        &.fa_history_ico_close::before,
+        &.fa_history_ico_docu::before {
+          font-weight: bold !important;
+          content: "\f1da";
+        }
+
+        &.fa_tasks_ico_open::before {
+          font-weight: bold !important;
+          content: "\f233";
+        }
+
+        &.firstPage::before {
+          content: "\f100";
+        }
+
+        &.prevPage::before {
+          content: "\f053";
+        }
+
+        &.nextPage::before {
+          content: "\f054";
+        }
+
+        &.lastPage::before {
+          content: "\f101";
+        }
+      }
+    }
+
+    a {
+      span {
+        &.button[style="width:0px;height:0px;"]::before,
+        &.button[style^="background"]::before {
+          content: "";
+        }
+      }
+
+      &.curSelectedNode,
+      &.tmpTargetNode_inner {
+        height: 26px;
+      }
+    }
+
+    & > a {
+      height: 26px;
+      line-height: 26px;
+    }
+
+    & > span {
+      height: 26px;
+    }
+
+    &:last-child::before {
+      background: white;
+      height: auto;
+      top: 13px;
+      bottom: 0;
+    }
+
+    span.button.switch,
+    span.button.chk,
+    a span.button,
+    span.button[class$="Page"] {
+      position: relative;
+      width: 21px;
+      height: 26px;
+      background: none;
+      background-position: center center !important;
+      padding: 2px 0;
+      vertical-align: middle;
+      display: inline-block;
+      font: normal normal normal 15px/1 "Font Awesome 5 Free";
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  }
+}

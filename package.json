@@ -1,0 +1,18 @@
+{
+  "name": "font-awesome-ztree",
+  "version": "1.2.0",
+  "description": "Font Awesome theme for zTree",
+  "repository": "https://github.com/wenzhixin/font-awesome-zTree",
+  "author": "zhixin <wenzhixin2010@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build:src": "sass --no-source-map src/font-awesome-zTree.scss dist/font-awesome-zTree.css",
+    "build:min": "cleancss dist/font-awesome-zTree.css -o dist/font-awesome-zTree.min.css",
+    "build": "run-s build:*"
+  },
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.72.0"
+  }
+}
